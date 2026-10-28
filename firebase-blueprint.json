@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "GuestMessage": {
+      "title": "GuestMessage",
+      "description": "A blessing or congratulatory message written by a guest for Cecilia and Ariel on their wedding invitation.",
+      "type": "object",
+      "properties": {
+        "authorName": {
+          "type": "string",
+          "description": "Name or family of the guest leaving the blessing.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "message": {
+          "type": "string",
+          "description": "Dedication, prayer, or blessing for Cecilia and Ariel.",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "song": {
+          "type": "string",
+          "description": "Optional recommended song for the wedding party.",
+          "minLength": 0,
+          "maxLength": 200
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the message was created."
+        }
+      },
+      "required": ["authorName", "message", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/messages/{messageId}": {
+      "schema": {
+        "$ref": "#/entities/GuestMessage"
+      },
+      "description": "Public guestbook messages and blessings written for Cecilia and Ariel on their wedding website."
+    }
+  }
+}

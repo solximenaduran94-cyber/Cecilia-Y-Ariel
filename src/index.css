@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  /* Exact Floral Decoration Color Reference */
+  --color-sage-gray: #89968C;       /* Verde salvia grisáceo */
+  --color-olive-sage: #6F7A69;      /* Verde oliva salvia */
+  --color-forest-deep: #293725;     /* Verde bosque profundo */
+  --color-ivory: #F3EEE5;           /* Blanco marfil */
+  --color-stone-light: #D1CAC3;     /* Beige piedra claro */
+  --color-sand-taupe: #B2A699;      /* Beige arena / taupe */
+  --color-champagne-gold: #B89A58;  /* Dorado champagne */
+  --color-warm-white: #FAF8F3;      /* Blanco cálido */
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+  }
+  .font-cinzel {
+    font-family: 'Cinzel', Georgia, serif;
+  }
+  .font-script {
+    font-family: 'Great Vibes', 'Pinyon Script', cursive;
+  }
+  .font-serif-luxury {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  }
+  .font-body {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Refined, Desaturated Champagne Gold Metallic Highlight */
+  .text-champagne-gold {
+    color: #B89A58;
+  }
+
+  .text-gold-foil {
+    background: linear-gradient(
+      135deg,
+      #FAF8F3 0%,
+      #F3EEE5 25%,
+      #D1CAC3 45%,
+      #B89A58 75%,
+      #9A7F42 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-warm-white {
+    color: #FAF8F3;
+  }
+
+  .text-ivory {
+    color: #F3EEE5;
+  }
+
+  .text-stone-light {
+    color: #D1CAC3;
+  }
+
+  .text-sand-taupe {
+    color: #B2A699;
+  }
+
+  .text-sage-gray {
+    color: #89968C;
+  }
+
+  .text-olive-sage {
+    color: #6F7A69;
+  }
+
+  /* Translucent Quiet Luxury Botanical Card: elegant glassmorphic deep forest green (#293725) */
+  .eucalyptus-card,
+  .silver-card {
+    background: linear-gradient(
+      165deg,
+      rgba(32, 45, 29, 0.58) 0%,
+      rgba(22, 32, 20, 0.64) 50%,
+      rgba(15, 22, 14, 0.70) 100%
+    );
+    backdrop-filter: blur(18px) saturate(135%);
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
+    border: 1px solid rgba(209, 202, 195, 0.32);
+    box-shadow: 
+      0 20px 45px -10px rgba(0, 0, 0, 0.65),
+      0 0 35px -5px rgba(41, 55, 37, 0.25),
+      inset 0 1px 1px 0 rgba(243, 238, 229, 0.2);
+  }
+
+  /* Translucent sub-card for inner items, lists, inputs, and boxes */
+  .translucent-subcard {
+    background: rgba(22, 32, 20, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(111, 122, 105, 0.35);
+  }
+
+  /* Fine hair-line dividers in champagne gold & stone beige */
+  .eucalyptus-divider,
+  .silver-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(209, 202, 195, 0.2) 15%,
+      rgba(184, 154, 88, 0.75) 50%,
+      rgba(209, 202, 195, 0.2) 85%,
+      transparent 100%
+    );
+  }
+}
+
+/* Floating Animations for Botanical leaves and lights */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-4deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(15px) rotate(4deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 8.5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 9s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.98;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4.5s ease-in-out infinite;
+}
+
+/* Custom scrollbar matching stone & sage */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #141C12;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(137, 150, 140, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 154, 88, 0.65);
+}
